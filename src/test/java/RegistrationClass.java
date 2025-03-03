@@ -32,6 +32,6 @@ public class RegistrationClass {
         $("[data-test-id=agreement]").click();
         $(".button__text").click();
 
-        $("[data-test-id=success-notification]").shouldBe(visible).shouldHave(text("Успешно!"));
+        $("[data-test-id=notification]").shouldBe(visible).shouldHave(text("Успешно!"));
     }
 }
