@@ -3,6 +3,7 @@ import com.codeborne.selenide.Selenide;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -13,7 +14,6 @@ import static com.codeborne.selenide.Selenide.$;
 public class RegistrationClass {
     @BeforeAll
     static void setUp() {
-        Configuration.browser = "chrome";
         Configuration.baseUrl = "https://localhost:9999";
         Configuration.timeout = 15000;
         Configuration.headless = true;
@@ -32,6 +32,6 @@ public class RegistrationClass {
         $("[data-test-id=agreement]").click();
         $(".button__text").click();
 
-        $("[data-test-id=notification]").shouldBe(visible).shouldHave(text("Успешно!"));
+        $("[data-test-id=notification]").shouldBe(visible, Duration.ofSeconds(15)).shouldHave(text("Успешно!"));
     }
 }
