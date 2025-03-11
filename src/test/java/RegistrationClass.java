@@ -26,7 +26,7 @@ public class RegistrationClass {
         $("[data-test-id='name'] input").setValue("Иван Иванов");
         $("[data-test-id='phone'] input").setValue("+79161234567");
         $("[data-test-id='agreement']").click();
-        $("[data-test-id='button'].button").click();
+        $("button.button").click();
 
         $(".notification__content")
                 .shouldBe(Condition.visible, Duration.ofSeconds(15))
